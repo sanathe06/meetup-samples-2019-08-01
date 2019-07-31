@@ -29,14 +29,42 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text("Hello"),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Hello world',
-            ),
-          ],
+      body: Builder(
+        builder: (context) => Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisSize: MainAxisSize.max,
+            children: <Widget>[
+              Text(
+                'Hello world',
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  FlatButton(
+                    color: Colors.amber,
+                    child: Text("Click me"),
+                    onPressed: () {
+                      final snackBar = SnackBar(
+                        content: Text('Yay! A SnackBar!'),
+                        action: SnackBarAction(
+                          label: 'Undo',
+                          onPressed: () {},
+                        ),
+                      );
+                      Scaffold.of(context).showSnackBar(snackBar);
+                    },
+                  ),
+                ],
+              ),
+              Container(
+                margin: EdgeInsets.all(16),
+                height: 50,
+                color: Colors.amber,
+              ),
+            ],
+          ),
         ),
       ),
     );
