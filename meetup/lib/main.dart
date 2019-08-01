@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'collections/collection_screen.dart';
 import 'navigations/first_screen.dart';
 import 'navigations/second_screen.dart';
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
         ),
         initialRoute: '/',
         routes: {
-          '/': (context) => FirstScreen(),
+          '/': (context) => CollectionsScreen(),
           '/second': (context) => SecondScreen(""),
         });
   }

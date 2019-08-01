@@ -41,7 +41,7 @@ class _FirstScreenState extends State<FirstScreen> {
                     builder: (context) => SecondScreen(textController.text),
                   ),
                 );
-                //Navigator.pushNamed(context, '/second');
+                Navigator.pushNamed(context, '/second');
                 textController.text = result;
               },
               color: Colors.amber.shade300,
