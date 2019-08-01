@@ -17,8 +17,23 @@ class MyApp extends StatelessWidget {
         ),
         initialRoute: '/',
         routes: {
-          '/': (context) => NetworkScreen(),
+          '/': (context) => LandingPage(),
           '/second': (context) => SecondScreen(""),
         });
+  }
+}
+
+class LandingPage extends StatefulWidget {
+  LandingPage({Key key}) : super(key: key);
+
+  _LandingPageState createState() => _LandingPageState();
+}
+
+class _LandingPageState extends State<LandingPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Scaffold(body: Center(child: Text("Welcome to Meetup"))),
+    );
   }
 }
