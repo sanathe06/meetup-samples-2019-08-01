@@ -3,3 +3,14 @@ meetup/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
 meetup/ios/Runner.xcworkspace/contents.xcworkspacedata
 meetup/android/.settings/org.eclipse.buildship.core.prefs
 meetup/android/app/.settings/org.eclipse.buildship.core.prefs
+meetup/android/.project
+meetup/android/app/.classpath
+meetup/android/app/.project
+meetup2/android/.project
+meetup2/android/.settings/org.eclipse.buildship.core.prefs
+meetup2/android/app/.classpath
+meetup2/android/app/.project
+meetup2/android/app/.settings/org.eclipse.buildship.core.prefs
+meetup2/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+meetup2/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
+meetup2/ios/Runner.xcworkspace/contents.xcworkspacedata

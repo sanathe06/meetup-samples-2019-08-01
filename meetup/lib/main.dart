@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'collections/collection_screen.dart';
+import 'common.dart';
+import 'imageasset/image_screen.dart';
 import 'navigations/first_screen.dart';
 import 'navigations/second_screen.dart';
 import 'network/network_screen.dart';
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
         ),
         initialRoute: '/',
         routes: {
-          '/': (context) => LandingPage(),
+          '/': (context) => ImageAssetScreen(),
           '/second': (context) => SecondScreen(""),
         });
   }
@@ -30,10 +32,36 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
+  int counter = 0;
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Scaffold(body: Center(child: Text("Welcome to Meetup"))),
+      child: Scaffold(
+        body: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Center(
+                  child: Text(
+                "$counter",
+                style: Constant.textStyle2,
+              )),
+              RaisedButton(
+                child: Text("+"),
+                onPressed: () {
+                  counter++;
+                  setState(() {
+                    
+                  });
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

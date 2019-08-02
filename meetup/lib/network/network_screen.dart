@@ -19,26 +19,28 @@ class _NetworkScreenState extends State<NetworkScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: FutureBuilder(
-          future: fetchPost(),
-          builder: (BuildContext context, AsyncSnapshot snapshot) {
-            if (snapshot.hasData) {
-              return ListView.builder(
-                itemCount: snapshot.data.length,
-                itemBuilder: (BuildContext context, int index) {
-                  Post post = snapshot.data[index];
-                  return ListTile(
-                    title: Text("${post.title}"),
-                  );
-                },
-              );
-            } else if (snapshot.hasError) {
-              return Text("${snapshot.error}");
-            } else {
-              return CircularProgressIndicator();
-            }
-          },
+      body: SafeArea(
+              child: Center(
+          child: FutureBuilder(
+            future: fetchPost(),
+            builder: (BuildContext context, AsyncSnapshot snapshot) {
+              if (snapshot.hasData) {
+                return ListView.builder(
+                  itemCount: snapshot.data.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    Post post = snapshot.data[index];
+                    return ListTile(
+                      title: Text("${post.title}"),
+                    );
+                  },
+                );
+              } else if (snapshot.hasError) {
+                return Text("${snapshot.error}");
+              } else {
+                return CircularProgressIndicator();
+              }
+            },
+          ),
         ),
       ),
     );
